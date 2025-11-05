@@ -15,11 +15,7 @@ total 8
 -rw-r--r--. 1 root root  824 Nov  5 18:48 db.reverse
 [root@bastion dns]#
 
-[root@bastion dns]# ls -l zones/
-total 8
--rw-r--r--. 1 root root 1670 Nov  5 18:43 db.kubelabs.com
--rw-r--r--. 1 root root  824 Nov  5 18:48 db.reverse
-[root@bastion dns]#
+```bash
 [root@bastion dns]# cat named.conf
 //
 // named.conf
@@ -100,7 +96,9 @@ zone "8.9.10.in-addr.arpa" {
 include "/etc/named.rfc1912.zones";
 include "/etc/named.root.key";
 [root@bastion dns]#
+```
 
+```bash
 [root@bastion dns]# cat zones/db.kubelabs.com
 $TTL    604800
 @       IN      SOA     bastion.kubelabs.com. contact.kubelabs.com (
@@ -148,7 +146,9 @@ _etcd-server-ssl._tcp.kubelabs.com.    86400     IN    SRV     0    10    2380  
 oauth-openshift.apps.kubelabs.com.     IN     A     10.9.8.1
 console-openshift-console.apps.kubelabs.com.     IN     A     10.9.8.1
 [root@bastion dns]#
+```
 
+```bash
 [root@bastion dns]# cat zones/db.reverse
 $TTL 604800
 @   IN  SOA  bastion.kubelabs.com. contact.kubelabs.com (
@@ -181,6 +181,8 @@ $TTL 604800
 15   IN  PTR  etcd-0.kubelabs.com.
 16   IN  PTR  etcd-1.kubelabs.com.
 17   IN  PTR  etcd-2.kubelabs.com.
+
+```
 
 [root@bastion dns]#
 \cp ./ocp4-metal-install/dns/named.conf /etc/named.conf
