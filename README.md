@@ -2,8 +2,10 @@
 Use these details to setup disconnected enviroment
 
 First we are gining to install the required pacakages 
-
+```bash
 dnf install bind bind-utils -y
+```
+
 [root@bastion dns]# ls
 named.conf  zones
 
